@@ -61,9 +61,9 @@ Console.WriteLine("Input a number:");
 int number = Convert.ToInt32(Console.ReadLine());
 int current = 1;
 
-if (number < 1)
+if (number <= 1)
 {
-    Console.Write("Uncorrect number. Input a number that is greater than zero.");
+    Console.Write("Uncorrect number. Input a number that is greater than zero and greater than one.");
 }
 else
 {
@@ -71,13 +71,27 @@ else
         {
             if (current == number) 
                 { 
-                    Console.Write(current + "."); 
-                    break;
+                    if (current % 2 == 0)
+                        {
+                            Console.Write(current); 
+                            break;
+                        }
+                    else
+                    {
+                        break;
+                    }
                 }
             else
                 {
-                    Console.Write(current + ", ");
-                    current++;
+                    if (current % 2 == 0)
+                    {
+                        Console.Write(current + " ");
+                        current++;
+                    }
+                    else
+                    {
+                        current++;
+                    }
                 }
         }
 }
